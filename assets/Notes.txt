@@ -1,0 +1,51 @@
+- flex -> flexible | grows vertically and horitzontally 
+- view -> container component 
+- SafeAreaView -> adds padding on top
+- require() -> returns a number that is the ref to the image
+Note: Manually specify the dimensions for network images
+
+
+    <Text numberOfLines={1} onPress={handlePress} >Hello World!!</Text>
+      <TouchableOpacity onPress={() => console.log('Pressed')}>
+      <Image 
+      blurRadius = {2}
+      fadeDuration = {10}
+      source={{
+        width: 200,
+        height: 200,
+        uri: "https://picsum.photos/200",
+        
+        }} />
+      </TouchableOpacity>
+
+      <Button
+      color="pink" 
+      title='Click Me' onPress = {handlePress} />  
+
+      Alert customization
+      onPress={() => Alert.alert("My Title", "My message", [
+        {text: "Yes", onPress : () => console.log("Yes Pressed")},
+        {text: "No" , onPress : () => console.log("No Pressed")},
+        ])  
+      }
+
+
+// only on iOS
+<Button
+      color="pink"
+      title='Click Me' 
+      onPress={ () =>
+      Alert.prompt("My Title", "My Message", text => console.log(text)) }
+/>
+
+// status bar 
+heightpaddingTop: Platform.OS === "android" ? StatusBar.currentHeight: 0,
+
+// for multiple orientations
+- import {useDimensions} from '@react-native-community/hooks';
+- call useDimensions
+
+// align content -> only when flex wrap is used
+// flex direction
+// justify content
+// align items
